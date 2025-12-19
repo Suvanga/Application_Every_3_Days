@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { createGoal, getUserGoals } from '../controllers/goalController';
+
+const router = Router();
+
+// POST /api/goals -> Create a goal
+router.post('/', createGoal);
+
+// GET /api/goals/:user_id -> Get all goals for a user
+router.get('/:user_id', getUserGoals);
+
+export default router;
